@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_splash"
-    tools:context=".src.ui.RegisterFragment">
+    tools:context=".src.ui.auth.RegisterFragment">
 
     <TextView
         android:id="@+id/textView"
@@ -61,6 +61,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:hint="@string/username"
+                    android:id="@+id/editor_register_username"
                     android:inputType="textEmailAddress"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -72,6 +73,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:hint="@string/password"
+                    android:id="@+id/editor_register_password"
                     android:inputType="textPassword"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -83,12 +85,26 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:hint="@string/re_password"
+                    android:id="@+id/editor_register_repassword"
                     android:inputType="textPassword"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
-            <include layout="@layout/space_height_medium"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include layout="@layout/space_height_small"/>
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/txt_register_error"
+                    android:layout_width="wrap_content"
+                    style="@style/textViewStyleError"
+                    android:layout_height="wrap_content"/>
+                <include layout="@layout/space_height_small"/>
+            </LinearLayout>
             <Button
                 style="@style/btnGradientRed"
+                android:id="@+id/btn_register"
                 android:background="@drawable/btn_gradient_red_selector"
                 android:text="@string/create_up"
                 android:layout_width="match_parent"
@@ -96,5 +112,5 @@
             <include layout="@layout/space_height_small"/>
         </LinearLayout>
     </LinearLayout>
-
+    <include layout="@layout/loading_normal"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

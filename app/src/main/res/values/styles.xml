@@ -10,6 +10,14 @@
         <item name="editTextStyle">@style/editorStyleNormal</item>
     </style>
 
+    <style name="CustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/colorRedAccent</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="tabIndicatorFullWidth">false</item>
+        <item name="tabBackground">?attr/selectableItemBackground</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+    </style>
+
     <style name="editorStyleNormal" parent="Widget.AppCompat.EditText">
         <item name="android:background">@drawable/border_editor_selector</item>
         <item name="android:textColorHint">@color/grey</item>
@@ -19,6 +27,12 @@
     <style name="textViewStyleBlack" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/roboto_slab</item>
+    </style>
+
+    <style name="textViewStyleError" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/colorRedAccent</item>
+        <item name="android:textSize">11sp</item>
         <item name="android:fontFamily">@font/roboto_slab</item>
     </style>
 

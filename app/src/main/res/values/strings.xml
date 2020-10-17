@@ -11,4 +11,8 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="re_password">Re-type password</string>
+
+    <string name="validate_username">Username must is email!</string>
+    <string name="validate_password">Minimum length is 6!</string>
+    <string name="validate_re_password">Not match!</string>
 </resources>

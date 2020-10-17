@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_splash"
-    tools:context=".src.ui.LoginFragment">
+    tools:context=".src.ui.auth.LoginFragment">
 
     <TextView
         android:id="@+id/textView"
@@ -61,6 +61,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:hint="@string/username"
+                    android:id="@+id/editor_login_username"
                     android:inputType="textEmailAddress"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -72,11 +73,25 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:hint="@string/password"
+                    android:id="@+id/editor_login_password"
                     android:inputType="textPassword"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
-            <include layout="@layout/space_height_medium"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include layout="@layout/space_height_small"/>
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/txt_login_error"
+                    android:layout_width="wrap_content"
+                    style="@style/textViewStyleError"
+                    android:layout_height="wrap_content"/>
+                <include layout="@layout/space_height_small"/>
+            </LinearLayout>
             <Button
+                android:id="@+id/btn_login"
                 style="@style/btnGradientRed"
                 android:background="@drawable/btn_gradient_red_selector"
                 android:text="@string/login"
@@ -85,5 +100,5 @@
             <include layout="@layout/space_height_small"/>
         </LinearLayout>
     </LinearLayout>
-
+    <include layout="@layout/loading_normal"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

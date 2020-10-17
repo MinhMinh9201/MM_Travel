@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/bg_menu_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".src.ui.MenuFragment">
+    tools:context=".src.ui.main.MenuFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager_menu"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        android:layout_height="0dp"/>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout_menu"
+        style="@style/CustomTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:icon="@drawable/ic_home_light"
+            android:layout_height="match_parent"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:icon="@drawable/ic_photo"
+            android:layout_height="match_parent"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:icon="@drawable/ic_explore"
+            android:layout_height="match_parent"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:icon="@drawable/ic_activity"
+            android:layout_height="match_parent"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:icon="@drawable/ic_profile"
+            android:layout_height="match_parent"/>
+    </com.google.android.material.tabs.TabLayout>
+</LinearLayout>

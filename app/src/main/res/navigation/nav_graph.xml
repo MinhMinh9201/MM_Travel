@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/startFragment"
-        android:name="com.knight.mm_travel.src.ui.StartFragment"
+        android:name="com.lqminhlab.mm_travel.src.ui.StartFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.knight.mm_travel.src.ui.LoginFragment"
+        android:name="com.lqminhlab.mm_travel.src.ui.auth.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.knight.mm_travel.src.ui.RegisterFragment"
+        android:name="com.lqminhlab.mm_travel.src.ui.auth.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.knight.mm_travel.src.ui.MenuFragment"
+        android:name="com.lqminhlab.mm_travel.src.ui.main.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" />
 </navigation>

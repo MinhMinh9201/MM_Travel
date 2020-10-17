@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "107331052664",
+    "firebase_url": "https://mmtravel-bd53e.firebaseio.com",
+    "project_id": "mmtravel-bd53e",
+    "storage_bucket": "mmtravel-bd53e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107331052664:android:8c6a6bae243316ee64b98d",
+        "android_client_info": {
+          "package_name": "com.lqminhlab.mm_travel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107331052664-qppldrfr2g8onencl9nlmg5m22gm1q32.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lqminhlab.mm_travel",
+            "certificate_hash": "8f59f66f2d95e412ddd162127dcf03c323572ba4"
+          }
+        },
+        {
+          "client_id": "107331052664-3ll01ktona7e4irstps1aehm6bn04s9m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkEI2AXrUfLTdP0O16u1G2KhZtNLPkjyg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107331052664-3ll01ktona7e4irstps1aehm6bn04s9m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
