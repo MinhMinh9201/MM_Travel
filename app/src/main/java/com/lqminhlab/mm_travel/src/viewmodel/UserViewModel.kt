@@ -8,6 +8,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.lqminhlab.mm_travel.src.resource.models.LocationModel
+import com.lqminhlab.mm_travel.src.resource.models.ResultModel
+import com.lqminhlab.mm_travel.src.resource.request.SearchLocationRequest
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -16,7 +19,15 @@ class UserViewModel : BaseViewModel() {
     private var auth: FirebaseAuth = Firebase.auth
     private val _userSubject = MutableLiveData<FirebaseUser>()
 
-    val userSubject: LiveData<FirebaseUser> get() = _userSubject
+val userSubject: LiveData<FirebaseUser> get() = _userSubject
+
+    fun onSuccess(data : List<ResultModel<LocationModel>>){
+
+    }
+
+    fun onError(message : String?){
+
+    }
 
     fun findUserWithLogin(activity: Activity?, ifLogin: ()->Unit, ifNot : ()->Unit){
         Log.d(TAG, "auth.currentUser ${auth.currentUser?.email ?: "Email"}")

@@ -2,14 +2,10 @@ package com.lqminhlab.mm_travel
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import com.lqminhlab.mm_travel.src.viewmodel.UserViewModel
+import com.lqminhlab.mm_travel.src.resource.Client
 
 class MainActivity : AppCompatActivity() {
-
-    lateinit var userViewModel : UserViewModel
 
     override fun onSupportNavigateUp(): Boolean {
         return findNavController(R.id.nav_host_fragment).navigateUp()
@@ -18,19 +14,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        initialized()
         observeUser()
         listener()
     }
 
-    private fun observeUser(){
+    private fun initialized() {
+        //instance client initialized
+        Client()
     }
 
-    private fun listener(){
+    private fun observeUser() {
 
     }
 
-    private fun showToast(value: String) {
-        Toast.makeText(this, value, Toast.LENGTH_LONG).show()
+    private fun listener() {
+
     }
 }

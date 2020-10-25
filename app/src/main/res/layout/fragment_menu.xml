@@ -11,7 +11,9 @@
         android:id="@+id/pager_menu"
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"/>
+        android:layout_height="0dp"
+        android:fillViewport="true" >
+    </androidx.viewpager.widget.ViewPager>
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout_menu"
         style="@style/CustomTabLayout"
@@ -38,4 +40,5 @@
             android:icon="@drawable/ic_profile"
             android:layout_height="match_parent"/>
     </com.google.android.material.tabs.TabLayout>
+    <include layout="@layout/loading_normal"/>
 </LinearLayout>
