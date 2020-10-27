@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_size_title">16sp</dimen>
+    <dimen name="font_size_app_title">20sp</dimen>
+
+    <dimen name="height_app_bar">55dp</dimen>
+    <dimen name="height_search">45dp</dimen>
+    <dimen name="height_button_app_bar">30</dimen>
+    <dimen name="height_icon_search">28</dimen>
+    <dimen name="height_image_explore">360dp</dimen>
+    <dimen name="width_image_explore">280</dimen>
+
+    <dimen name="padding_normal">25dp</dimen>
+    <dimen name="padding_small">15dp</dimen>
+</resources>

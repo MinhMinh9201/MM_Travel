@@ -1,6 +1,5 @@
 package com.lqminhlab.mm_travel.src.ui.main
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -20,7 +19,7 @@ import kotlinx.android.synthetic.main.loading_normal.*
 class HomeFragment : Fragment() {
 
     private val adapterCarousel by lazy {
-        CarouselAdapter { position, location ->
+        CarouselAdapter { position, _ ->
             Log.e("HOMEEE", position.toString())
         }
     }
