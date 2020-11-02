@@ -1,33 +1,23 @@
 package com.lqminhlab.mm_travel.src.ui.main
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.tabs.TabLayout
 import com.lqminhlab.mm_travel.R
 import com.lqminhlab.mm_travel.src.adapters.MenuAdapter
-import com.lqminhlab.mm_travel.src.viewmodel.HomeViewModel
-import com.lqminhlab.mm_travel.src.viewmodel.UserViewModel
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_menu.*
-import kotlinx.android.synthetic.main.loading_normal.*
 
 class MenuFragment : Fragment() {
 
-    private lateinit var userModel: UserViewModel
-    private lateinit var homeViewModel: HomeViewModel
     private lateinit var adapter: MenuAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        userModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
-        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val fragments: List<Fragment> = listOf(
             HomeFragment.newInstance(),
             PhotoFragment.newInstance(),
@@ -37,7 +27,6 @@ class MenuFragment : Fragment() {
         )
         val fm: FragmentManager = activity?.supportFragmentManager!!
         adapter = MenuAdapter(fm, fragments)
-        obverse()
     }
 
     override fun onCreateView(
@@ -51,12 +40,6 @@ class MenuFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         listener()
-    }
-
-    private fun obverse(){
-        homeViewModel.loadingSubject.observe(this, Observer {
-            loading_normal.visibility = if (it) View.VISIBLE else View.GONE
-        })
     }
 
     private fun listener() {

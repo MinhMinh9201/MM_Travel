@@ -41,9 +41,10 @@ class CarouselAdapter(val onItemClick: (position: Int, location: LocationModel) 
 }
 
 class CarouselViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-    private val sizes : AppSizes = AppSizes(view.context)
+    private val sizes: AppSizes = AppSizes(view.context)
     fun bind(location: LocationModel) {
-        view.image_carousel_view.layoutParams.width = sizes.width
+        view.image_carousel_view.layoutParams.width =
+            sizes.width - ((view.context.resources.getDimension(R.dimen.padding_small) * 2).toInt())
         view.image_carousel_view.layoutParams.height = sizes.width
         val urlImage = URL(location.photo.images.large.url)
         val result: Deferred<Bitmap?> = GlobalScope.async {
