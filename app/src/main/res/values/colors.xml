@@ -17,4 +17,5 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="blackOpacity">#393333</color>
+    <color name="backgroundOpacity">#33000000</color>
 </resources>

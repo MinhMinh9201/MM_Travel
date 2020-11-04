@@ -3,8 +3,9 @@ package com.lqminhlab.mm_travel.src.resource.repositorires
 import android.util.Log
 import com.lqminhlab.mm_travel.src.constants.AppConstants
 import com.lqminhlab.mm_travel.src.resource.Client
+import com.lqminhlab.mm_travel.src.resource.models.AttractionModel
 import com.lqminhlab.mm_travel.src.resource.models.LocationModel
-import com.lqminhlab.mm_travel.src.resource.models.ResultModel
+import com.lqminhlab.mm_travel.src.resource.models.ResultLocationModel
 import com.lqminhlab.mm_travel.src.resource.request.SearchAttractionsRequest
 import com.lqminhlab.mm_travel.src.resource.request.SearchLocationRequest
 import com.lqminhlab.mm_travel.src.resource.response.ResponseList
@@ -28,8 +29,8 @@ class SharedRepository {
             observables.add(service.searchLocation(request.toJSON(), AppConstants.baseHeader))
         }
         Observable.zip(observables) {
-            val data: List<ResponseList<ResultModel<LocationModel>>> =
-                it.toList() as List<ResponseList<ResultModel<LocationModel>>>
+            val data: List<ResponseList<ResultLocationModel<LocationModel>>> =
+                it.toList() as List<ResponseList<ResultLocationModel<LocationModel>>>
             val locations: ArrayList<LocationModel> = ArrayList<LocationModel>()
             for (item in data) {
                 locations.add(item.data.find { resultModel ->
@@ -50,7 +51,7 @@ class SharedRepository {
 
     fun searchLocation(
         request: SearchLocationRequest,
-        onSuccess: (data: List<ResultModel<LocationModel>>) -> Unit,
+        onSuccess: (data: List<ResultLocationModel<LocationModel>>) -> Unit,
         onError: (message: String?) -> Unit
     ) {
         service.searchLocation(request.toJSON(), AppConstants.baseHeader)
@@ -73,8 +74,8 @@ class SharedRepository {
         }
         Observable.zip(observables) {
             Log.e(TAG, it[0].toString())
-            val data: List<ResponseList<ResultModel<Any>>> =
-                it.toList() as List<ResponseList<ResultModel<Any>>>
+            val data: List<ResponseList<ResultLocationModel<Any>>> =
+                it.toList() as List<ResponseList<ResultLocationModel<Any>>>
             val attractions: ArrayList<Any> = ArrayList<Any>()
             for (item in data) {
                 attractions.add(item.data.find { resultModel ->
@@ -95,14 +96,18 @@ class SharedRepository {
 
     fun searchAttractions(
         request: SearchAttractionsRequest,
-        onSuccess: (data: List<ResultModel<Any>>) -> Unit,
-        onError: (message: String?) -> Unit
+        onSuccess: (data: List<AttractionModel>) -> Unit,
+        onError: (message: String?) -> Unit,
+        onComplete: () -> Unit
     ) {
-        service.searchAttractions(request.toJSON(), AppConstants.baseHeader).subscribeOn(Schedulers.io())
+        service.searchAttractions(request.toJSON(), AppConstants.baseHeader)
+            .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread()).subscribe(
                 { result -> onSuccess(result.data) },
                 { error -> onError(error.message) }
-            )
+            ) {
+                onComplete.invoke()
+            }
     }
 
     companion object {

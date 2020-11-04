@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".src.ui.attractions_presentation.LocationPresentationFragment">
+
+    <ImageView
+        android:id="@+id/image_location_presentation_background"
+        android:contentDescription="@string/recommend"
+        android:layout_width="match_parent"
+        android:scaleType="fitStart"
+        android:layout_height="match_parent" />
+
+    <com.lqminhlab.mm_travel.src.customs.VerticalViewPager
+        android:id="@+id/pager_location_presentation"
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_app_bar"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/padding_normal"
+        android:weightSum="1">
+
+        <Button
+        android:id="@+id/btnExploreFilter"
+        android:layout_width="35dp"
+        android:layout_height="20dp"
+        android:background="@drawable/ic_back" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"/>
+    </LinearLayout>
+    <include layout="@layout/loading_normal"/>
+</RelativeLayout>

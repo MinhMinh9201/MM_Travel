@@ -5,6 +5,7 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:elevation="1dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardCornerRadius="@dimen/corner_radius_explore">
@@ -18,6 +19,7 @@
     </androidx.cardview.widget.CardView>
 
     <LinearLayout
+        android:elevation="2dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
@@ -25,19 +27,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/corner_radius_explore"
-            android:backgroundTint="@color/black"
+            android:background="@color/backgroundOpacity"
             android:orientation="vertical"
-            android:paddingHorizontal="@dimen/padding_normal"
-            android:paddingVertical="@dimen/padding_small">
+            android:paddingHorizontal="@dimen/padding_small"
+            android:paddingVertical="@dimen/padding_in_code">
 
             <TextView
                 android:id="@+id/text_title_explore_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
-    <include layout="@layout/loading_normal" />
+    <include
+        android:elevation="2dp"
+        layout="@layout/loading_normal" />
 </RelativeLayout>

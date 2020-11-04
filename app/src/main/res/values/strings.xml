@@ -25,4 +25,6 @@
     <string name="page_explore">Explore</string>
     <string name="page_activity">Activity</string>
     <string name="page_profile">Profile</string>
+
+    <string name="location_place_to_visit">Places to visit</string>
 </resources>

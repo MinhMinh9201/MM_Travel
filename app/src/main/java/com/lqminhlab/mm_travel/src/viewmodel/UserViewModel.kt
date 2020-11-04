@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.lqminhlab.mm_travel.src.resource.models.LocationModel
-import com.lqminhlab.mm_travel.src.resource.models.ResultModel
+import com.lqminhlab.mm_travel.src.resource.models.ResultLocationModel
 import com.lqminhlab.mm_travel.src.resource.request.SearchLocationRequest
 import java.util.*
 import kotlin.concurrent.schedule
@@ -21,7 +21,7 @@ class UserViewModel : BaseViewModel() {
 
 val userSubject: LiveData<FirebaseUser> get() = _userSubject
 
-    fun onSuccess(data : List<ResultModel<LocationModel>>){
+    fun onSuccess(data : List<ResultLocationModel<LocationModel>>){
 
     }
 

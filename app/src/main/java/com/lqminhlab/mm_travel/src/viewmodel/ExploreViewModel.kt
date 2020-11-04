@@ -20,7 +20,7 @@ class ExploreViewModel : BaseViewModel() {
     val euroSubject: LiveData<List<LocationModel>> get() = _euroSubject
     val featureSubject: LiveData<List<LocationModel>> get() = _featuredSubject
 
-    fun getAttractions() {
+    fun getLocations() {
         setLoading(true)
         val recommend: List<LocationModel>? = AppShared.prefs.recommendLocations
         val euro: List<LocationModel>? = AppShared.prefs.euroLocations

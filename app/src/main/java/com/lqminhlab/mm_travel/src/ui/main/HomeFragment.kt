@@ -40,9 +40,8 @@ class HomeFragment : Fragment() {
 
     private fun initialized() {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        carousel_home.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         carousel_home.apply {
-            layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, true)
+            layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
             adapter = adapterCarousel
         }
         homeViewModel.getCountries()
@@ -52,7 +51,7 @@ class HomeFragment : Fragment() {
         homeViewModel.loadingSubject.observe(viewLifecycleOwner, Observer {
             loading_normal.visibility = if (it) View.VISIBLE else View.GONE
         })
-        homeViewModel.countriesSubject.observe(viewLifecycleOwner, Observer {
+        homeViewModel.locationsSubject.observe(viewLifecycleOwner, Observer {
             println("searchMultipleLocation: ${it.size}")
             adapterCarousel.setData(it)
         })
