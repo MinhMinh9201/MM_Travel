@@ -54,4 +54,35 @@ data class AttractionModel(
     val web_url: String? = "",
     val website: String? = "",
     val write_review: String? = ""
-)
+) {
+    fun toLocation(): LocationModel {
+        return LocationModel(
+            listOf(),
+            listOf(),
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            false,
+            false,
+            false,
+            false,
+            "",
+            "",
+            "",
+            "",
+            "",
+            listOf(),
+            listOf(),
+            "",
+            photo!!,
+            "",
+            listOf(),
+            "",
+            "",
+            this
+        )
+    }
+}

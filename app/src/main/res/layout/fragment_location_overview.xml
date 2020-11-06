@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".src.ui.attractions_presentation.LocationOverviewFragment">
+    tools:context=".src.ui.locations.LocationOverviewFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,6 +48,7 @@
                     android:textFontWeight="300" />
             </LinearLayout>
             <Button
+                android:id="@+id/btn_scroll_to_detail"
                 android:rotation="270"
                 android:layout_gravity="center"
                 android:layout_width="35dp"

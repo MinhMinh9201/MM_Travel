@@ -58,7 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/locationPresentionFragment"
-        android:name="com.lqminhlab.mm_travel.src.ui.attractions_presentation.LocationPresentationFragment"
+        android:name="com.lqminhlab.mm_travel.src.ui.locations.LocationPresentationFragment"
         android:label="fragment_location_presention"
         tools:layout="@layout/fragment_location_presentation" />
 </navigation>

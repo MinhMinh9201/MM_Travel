@@ -28,7 +28,6 @@ class HomeViewModel : BaseViewModel() {
                 sort = "recommend",
                 unit = ""
             ), {
-                Log.e(TAG, "SIZE -> ${it.size ?: "No message"}")
                 _attractionsSubject.postValue(it)
             }, {
                 Log.e(TAG, "Message -> ${it ?: "No message"}")

@@ -21,9 +21,10 @@ data class LocationModel(
     val nearby_attractions: List<Any>,
     val nearest_metro_station: List<Any>,
     val num_reviews: String,
-    val photo: PhotoModel,
+    val photo: Photo,
     val preferred_map_engine: String,
     val subcategory: List<Any>,
     val timezone: String,
-    val web_url: String
+    val web_url: String,
+    val attraction : AttractionModel? = AttractionModel()
 )

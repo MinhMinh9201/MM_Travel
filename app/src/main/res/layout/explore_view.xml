@@ -30,7 +30,7 @@
             android:background="@color/backgroundOpacity"
             android:orientation="vertical"
             android:paddingHorizontal="@dimen/padding_small"
-            android:paddingVertical="@dimen/padding_in_code">
+            android:paddingVertical="@dimen/padding_very_small">
 
             <TextView
                 android:id="@+id/text_title_explore_view"

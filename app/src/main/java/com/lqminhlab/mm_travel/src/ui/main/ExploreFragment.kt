@@ -16,7 +16,7 @@ import com.google.gson.Gson
 import com.lqminhlab.mm_travel.R
 import com.lqminhlab.mm_travel.src.adapters.ExploreAdapter
 import com.lqminhlab.mm_travel.src.resource.models.LocationModel
-import com.lqminhlab.mm_travel.src.ui.attractions_presentation.LocationPresentationFragment
+import com.lqminhlab.mm_travel.src.ui.locations.LocationPresentationFragment
 import com.lqminhlab.mm_travel.src.viewmodel.ExploreViewModel
 import kotlinx.android.synthetic.main.fragment_explore.*
 import kotlinx.android.synthetic.main.loading_normal.*

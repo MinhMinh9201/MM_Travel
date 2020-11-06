@@ -14,7 +14,7 @@
     <dimen name="padding_large">40dp</dimen>
     <dimen name="padding_normal">25dp</dimen>
     <dimen name="padding_small">15dp</dimen>
-    <dimen name="padding_in_code">8dp</dimen>
+    <dimen name="padding_very_small">8dp</dimen>
 
     <dimen name="corner_radius_explore">12dp</dimen>
 </resources>

@@ -46,7 +46,7 @@ class CarouselViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
         view.image_carousel_view.layoutParams.width =
             sizes.width - ((view.context.resources.getDimension(R.dimen.padding_small) * 2).toInt())
         view.image_carousel_view.layoutParams.height = sizes.width
-        val urlImage = URL(location.photo.images.large.url)
+        val urlImage = URL(location.photo.images.large?.url ?: location.photo.images.original?.url)
         val result: Deferred<Bitmap?> = GlobalScope.async {
             urlImage.toBitmap()
         }

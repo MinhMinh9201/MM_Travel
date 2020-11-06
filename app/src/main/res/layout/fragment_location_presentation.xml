@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".src.ui.attractions_presentation.LocationPresentationFragment">
+    tools:context=".src.ui.locations.LocationPresentationFragment">
 
     <ImageView
         android:id="@+id/image_location_presentation_background"
@@ -27,7 +27,7 @@
         android:weightSum="1">
 
         <Button
-        android:id="@+id/btnExploreFilter"
+        android:id="@+id/btn_back"
         android:layout_width="35dp"
         android:layout_height="20dp"
         android:background="@drawable/ic_back" />

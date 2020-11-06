@@ -1,4 +1,4 @@
-package com.lqminhlab.mm_travel.src.ui.attractions_presentation
+package com.lqminhlab.mm_travel.src.ui.locations
 
 import android.graphics.Bitmap
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.google.gson.Gson
 import com.lqminhlab.mm_travel.R
 import com.lqminhlab.mm_travel.src.adapters.MenuAdapter
@@ -38,6 +39,7 @@ class LocationPresentationFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         initialized()
         obverse()
+        listen()
     }
 
     private fun obverse() {
@@ -48,7 +50,10 @@ class LocationPresentationFragment : Fragment() {
             val fm: FragmentManager = activity?.supportFragmentManager!!
             adapter = MenuAdapter(
                 fm,
-                listOf(LocationOverviewFragment(location, it.size), LocationInfoFragment(location, it))
+                listOf(
+                    LocationOverviewFragment(location, it.size, pager_location_presentation),
+                    LocationInfoFragment(location, it)
+                )
             )
             pager_location_presentation.adapter = adapter
         })
@@ -59,14 +64,22 @@ class LocationPresentationFragment : Fragment() {
         location = Gson().fromJson<LocationModel>(json, LocationModel::class.java)
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val loadBackground: Deferred<Bitmap?> = GlobalScope.async {
-            URL(location.photo.images.original.url).toBitmap()
+            URL(location.photo.images.large?.url ?: location.photo.images.original?.url).toBitmap()
         }
-        GlobalScope.launch(Dispatchers.Main) {
-            homeViewModel.setLoading(true)
+        homeViewModel.setLoading(true)
+        GlobalScope.launch(Dispatchers.IO) {
             val bitmap: Bitmap? = loadBackground.await()
-            if (bitmap != null)
-                image_location_presentation_background.setImageBitmap(bitmap)
             homeViewModel.getAttractionByLocation(location.location_id ?: "")
+            withContext(Dispatchers.Main) {
+                if (bitmap != null)
+                    image_location_presentation_background.setImageBitmap(bitmap)
+            }
+        }
+    }
+
+    private fun listen() {
+        btn_back.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 
